@@ -1,0 +1,28 @@
+body{
+    background-color: #e7e9eb;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    z-index: 2;
+    background-color: white;
+}
+.product__rating{
+    color: rgb(207, 207, 90);
+}
+.product__image{
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+.product > button{
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: yellow;
+    border-radius: 3px;
+    border-color: rgb(197, 197, 91);
+}
