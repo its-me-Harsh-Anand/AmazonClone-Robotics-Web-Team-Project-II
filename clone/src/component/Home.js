@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "../css/Home.css";
 import Product from "./Product";
 import { v4 as uuidv4 } from 'uuid';
 
