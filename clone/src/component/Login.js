@@ -1,20 +1,27 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import "../css/Login.css"
 import { auth } from './firebase'
 
 function Login() {
-    const [email, setEmail] = useState("")
+    const history = useHistory(); // it allows us to programetically change the url
+    const [email, setEmail] = useState("") // change the state of something with a function
     const [password, setPassword] = useState("")
     const signIn = (e) => {
         e.preventDefault()
-
+        auth.signInWithEmailAndPassword(email, password).then(auth => {
+            history.push('/')
+        }).catch(error => alert(error.message))
         //firebase stuff on this function
     }
     const register = (e) => {
         e.preventDefault()
         auth.createUserWithEmailAndPassword(email, password).then(auth => {
+            //it successfully creates the user with email and password
             console.log(auth)
+            if (auth) {
+                history.push('/')
+            }
         }).catch(error => alert(error.message))
         //firebase stuff on this function
     }

@@ -6,7 +6,6 @@ export default function Product(props) {
   const { id, title, image, price, rating } = props
   const [{basket}, dispatch]= useStateValue()
 
-  console.log("this is basket >>>", basket)
   const addToBasket = ()=>{
     dispatch({
       type: "ADD_TO_BASKET",
